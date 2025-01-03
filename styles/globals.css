@@ -2,20 +2,75 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    scroll-behavior: smooth;
+}
+
+.welcome {
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-size: 38px;
+    font-weight: 500;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.welcome > span {
+    background: linear-gradient(39deg, rgba(36,25,245,1) 0%, rgba(172,123,211,1) 97%, rgba(177,126,217,1) 100%);
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+.getYour {
+    font-size: 15px; 
+    font-weight: 350;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+.personalTrainerContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    opacity: 95%;
+    width: 1000px;
+}
+.personalTrainerContainer::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, black 10%, transparent 40%, transparent 60%, black 90%), 
+                linear-gradient(to top, black 3%, transparent 20%, transparent 85%, black 100%);
+    pointer-events: none; 
+}
+.personalTrainer {
+    width: 100%;
+}
+@media (max-width: 1100px) {
+    .personalTrainerContainer {
+        width: 100%;
+        max-width: 1000px;
+    }
+}
+
+
+.getStarted {
+    margin-top: 800px;
+    width: 120px;
+    height: 40px;
+    border-radius: 15px;
 }
